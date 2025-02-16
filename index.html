@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IQ Test</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>IQ Test</h1>
+        <nav>
+            <a href="#" id="login-link">Login</a>
+            <a href="#" id="signup-link">Sign Up</a>
+            <a href="#" id="profile-link" class="hidden">Profile</a>
+            <a href="#" id="leaderboard-link">Leaderboard</a>
+            <a href="#" id="logout-link" class="hidden">Logout</a>
+            <button id="theme-toggle">Dark Mode</button>
+        </nav>
+    </header>
+    <main>
+        <section id="welcome-section">
+            <h2>Welcome to the IQ Test</h2>
+            <p>Test your intelligence with our 15-question IQ test.</p>
+            <button id="start-test-button">Start Test</button>
+        </section>
+        <section id="test-section" class="hidden">
+            <h2>IQ Test</h2>
+            <form id="test-form">
+                <!-- Questions will be injected here by JavaScript -->
+            </form>
+            <button id="submit-test-button" class="hidden">Submit Test</button>
+            <p id="timer"></p>
+        </section>
+        <section id="result-section" class="hidden">
+            <h2>Your Results</h2>
+            <p id="result-score"></p>
+            <button id="share-results-button">Share Results</button>
+            <button id="retake-test-button">Retake Test</button>
+        </section>
+        <section id="leaderboard-section" class="hidden">
+            <h2>Leaderboard</h2>
+            <ul id="leaderboard">
+                <!-- Leaderboard will be populated by JavaScript -->
+            </ul>
+        </section>
+        <section id="profile-section" class="hidden">
+            <h2>Your Profile</h2>
+            <p id="user-info"></p>
+            <button id="edit-profile-button">Edit Profile</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 IQ Test. All rights reserved.</p>
+    </footer>
+    <div id="auth-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="auth-modal-title">Login</h2>
+            <form id="auth-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit" id="auth-submit-button">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
