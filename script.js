@@ -7,21 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultSection = document.getElementById('result-section');
     const welcomeSection = document.getElementById('welcome-section');
     const leaderboardSection = document.getElementById('leaderboard-section');
-    const profileSection = document.getElementById('profile-section');
     const resultScore = document.getElementById('result-score');
     const testForm = document.getElementById('test-form');
     const timerElement = document.getElementById('timer');
-    const authModal = document.getElementById('auth-modal');
-    const authForm = document.getElementById('auth-form');
-    const closeModalButton = document.querySelector('.close-button');
     const themeToggleButton = document.getElementById('theme-toggle');
-    const loginLink = document.getElementById('login-link');
-    const signupLink = document.getElementById('signup-link');
-    const profileLink = document.getElementById('profile-link');
-    const logoutLink = document.getElementById('logout-link');
     const leaderboardLink = document.getElementById('leaderboard-link');
-    const userInfo = document.getElementById('user-info');
-    const editProfileButton = document.getElementById('edit-profile-button');
 
     let score = 0;
     let timer;
@@ -78,42 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }).catch(console.error);
     });
 
-    authForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-        // Add authentication logic here
-        authModal.classList.add('hidden');
-        loginLink.classList.add('hidden');
-        signupLink.classList.add('hidden');
-        profileLink.classList.remove('hidden');
-        logoutLink.classList.remove('hidden');
-    });
-
-    closeModalButton.addEventListener('click', () => {
-        authModal.classList.add('hidden');
-    });
-
-    loginLink.addEventListener('click', () => {
-        authModal.classList.remove('hidden');
-        document.getElementById('auth-modal-title').textContent = 'Login';
-        document.getElementById('auth-submit-button').textContent = 'Login';
-    });
-
-    signupLink.addEventListener('click', () => {
-        authModal.classList.remove('hidden');
-        document.getElementById('auth-modal-title').textContent = 'Sign Up';
-        document.getElementById('auth-submit-button').textContent = 'Sign Up';
-    });
-
-    logoutLink.addEventListener('click', () => {
-        // Add logout logic here
-        loginLink.classList.remove('hidden');
-        signupLink.classList.remove('hidden');
-        profileLink.classList.add('hidden');
-        logoutLink.classList.add('hidden');
-    });
-
     themeToggleButton.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
         themeToggleButton.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
@@ -123,10 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
         welcomeSection.classList.add('hidden');
         leaderboardSection.classList.remove('hidden');
         loadLeaderboard();
-    });
-
-    editProfileButton.addEventListener('click', () => {
-        // Add edit profile logic here
     });
 
     function loadQuestions() {
